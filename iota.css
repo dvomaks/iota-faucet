@@ -1,0 +1,150 @@
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css?family=Roboto:400,700,500) font-weight: bold;
+}
+
+.home {
+    margin: 0;
+    background-color: #3E7A78;
+    display: flex;
+    box-sizing: border-box;
+    min-height: 100vh;
+    border: 30px solid whitesmoke;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1;
+    justify-content: center;
+    @media (min-width: 992px) {
+        border-width: 30px;
+    }
+}
+
+.container {
+    width: 500px;
+    margin: 100px auto;
+    position: relative;
+}
+
+.input-group {
+    border-collapse: separate;
+    box-sizing: border-box;
+    color: rgb(103, 106, 108);
+    display: table;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 13px;
+    height: 39px;
+    line-height: 18.5714px;
+    position: relative;
+    text-size-adjust: 100%;
+    width: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.button {
+        text-align: center;
+    color: #202129;
+  background-color: #edeeee;
+    border-radius: 4px;
+    border-collapse: separate;
+    box-sizing: border-box;
+    display: table-cell;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    height: 38px;
+    line-height: 0px;
+    position: relative;
+    text-size-adjust: 100%;
+    vertical-align: middle;
+    white-space: nowrap;
+    width: 100px;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.button:hover {
+        transition: all 60ms ease;
+        opacity: .85;
+        color: #202129;
+        background-color: #e1e2e2;
+        opacity: 1;
+}
+.button:active {
+        transition: all 60ms ease;
+        opacity: .75;
+        background-color: #d5d6d6;
+        opacity: 1;
+}
+.button:focus {
+        outline: 1px dotted #959595;
+        outline-offset: -4px;
+}
+
+.input {
+    background-color: rgb(255, 255, 255);
+    background-image: none;
+    border-bottom-color: rgb(229, 230, 231);
+    border-bottom-left-radius: 1px;
+    border-bottom-right-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+    border-collapse: separate;
+    border-image-outset: 0px;
+    border-image-repeat: stretch;
+    border-image-slice: 100%;
+    border-image-source: none;
+    border-image-width: 1;
+    border-left-color: rgb(229, 230, 231);
+    border-left-style: solid;
+    border-left-width: 1px;
+    border-right-color: rgb(229, 230, 231);
+    border-right-style: solid;
+    border-right-width: 1px;
+    border-top-color: rgb(229, 230, 231);
+    border-top-left-radius: 1px;
+    border-top-right-radius: 0px;
+    border-top-style: solid;
+    border-top-width: 1px;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: rgb(103, 106, 108);
+    cursor: auto;
+    display: block;
+    float: left;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 16px;
+    font-stretch: normal;
+    font-style: normal;
+    font-variant-caps: normal;
+    font-variant-ligatures: normal;
+    font-variant-numeric: normal;
+    font-weight: normal;
+    height: 39px;
+    letter-spacing: normal;
+    line-height: 22px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    padding-bottom: 6px;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-top: 6px;
+    position: relative;
+    text-align: start;
+    text-indent: 0px;
+    text-rendering: auto;
+    text-shadow: none;
+    text-size-adjust: 100%;
+    text-transform: none;
+    transition-delay: 0s, 0s;
+    transition-duration: 0.15s, 0.15s;
+    transition-property: border-color, box-shadow;
+    transition-timing-function: ease-in-out, ease-in-out;
+    user-select: text;
+    width: 400px;
+    word-spacing: 0px;
+    writing-mode: horizontal-tb;
+    z-index: 2;
+    -webkit-appearance: none;
+    -webkit-rtl-ordering: logical;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-border-image: none;
+}
