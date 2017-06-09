@@ -9,9 +9,8 @@ var iota = new IOTA({
 
 // we have a bank - so seed is static and secret!
 // TODO one mainnet is back online - generate SEED
-//Added a already Generated Seed (0 Iota)
-//TODO add a security, otherwise you can read the var in Browser!
-var seed = "RFAYKKOAHGMEUZ9IVJACGIWZEIMR9BDJUSJMULIWYWOITLOVYOBDINMXLGSOCRHBWEEGWISCEKJUDHZWJ";
+// TODO add security, otherwise you can read the var in Browser!
+var seed = "";
 var balance = 0;
 
 
