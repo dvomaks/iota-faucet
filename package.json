@@ -1,0 +1,17 @@
+{
+  "name": "iota-faucet",
+  "version": "0.1.0",
+  "description": "A simple iota web app",
+  "author": "Endlicher, Fröhlich <team@isarstyle.com>",
+  "scripts": {
+    "start": "node node/server.js"
+  },
+  "dependencies": {
+    "body-parser": "",
+    "express": "",
+    "iota.lib.js": "",
+    "path": "^0.12.7",
+    "socket.io": "^2.0.2"
+  },
+  "private": true
+}

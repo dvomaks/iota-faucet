@@ -1,17 +1,18 @@
 $(document).ready(function() {
+    // Initialize variables
+    var $window = $(window);
+    var address = getDataFromForm()
+    var socket = io();
     console.log("Document Ready");
     //Attach Eventlistener
     $( "#sendIotaBtn" ).click(function() {
         alert(getDataFromForm());
         console.log(getDataFromForm());
         //TODO Clean Input Data of unwanted Stuff?
-        var address = getDataFromForm()
-
-
-        //TODO Call The sendTransfer(address, value, messageTrytes)
-        sendTransfer(getDataFromForm(), 1 , 1)
-
+        // Socket events
+        socket.emit('send', getDataFromForm);
         //Add Response for Iota is Sending
+
 
     });
 
@@ -21,6 +22,4 @@ $(document).ready(function() {
     }
 
 
-
-
-});
+    });
