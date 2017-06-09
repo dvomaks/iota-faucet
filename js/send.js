@@ -1,24 +1,21 @@
-$(document).ready(function() {
+//
+//  Instantiate IOTA
+//
+var iota = new IOTA({
+  'provider'  : 'http://sandbox.iotatoken.com/api/v1/',
+  'sandbox'   :  true,
+  'token'     : 'EXAMPLE-TOKEN-HERE'
+});
 
-    //
-    //  Instantiate IOTA
-    //
-    var iota = new IOTA({
-      'provider'  : 'http://sandbox.iotatoken.com/api/v1/',
-      'sandbox'   :  true,
-      'token'     : 'EXAMPLE-TOKEN-HERE'
-    });
+// we have a bank - so seed is static and secret!
+// TODO one mainnet is back online - generate SEED
+//Added a already Generated Seed (0 Iota)
+//TODO add a security, otherwise you can read the var in Browser!
+var seed = "RFAYKKOAHGMEUZ9IVJACGIWZEIMR9BDJUSJMULIWYWOITLOVYOBDINMXLGSOCRHBWEEGWISCEKJUDHZWJ";
+var balance = 0;
 
-    var seed;
-    var balance = 0;
 
-    // we have a bank - so seed is static and secret!
-    // TODO one mainnet is back online - generate SEED
-    function setSeed(value) {
-        seed = "";
-    }
 
-    //
     // Gets the addresses and transactions of an account
     // As well as the current balance
     //  Automatically updates the HTML on the site
@@ -36,7 +33,6 @@ $(document).ready(function() {
         })
     }
 
-
     //
     //  Makes a new transfer for the specified seed
     //  Includes message and value
@@ -50,7 +46,7 @@ $(document).ready(function() {
         }]
 
         console.log("Sending Transfer", transfer);
-
+        console.log(iota);
         // We send the transfer from this seed, with depth 4 and minWeightMagnitude 18
         iota.api.sendTransfer(seed, 4, 18, transfer, function(e) {
 
@@ -63,4 +59,3 @@ $(document).ready(function() {
             }
         })
     }
-});
