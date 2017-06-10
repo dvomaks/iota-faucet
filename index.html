@@ -9,6 +9,20 @@
   integrity="sha256-k2WSCIexGzOj3Euiig+TlR8gA0EmPjuc79OEeY5L45g="
   crossorigin="anonymous">
 </script>
+<script src="https://www.gstatic.com/firebasejs/3.2.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyDgwP28B5lurLoK9WuldLQgXXVpI-EipQ8",
+    authDomain: "api-project-332443515014.firebaseapp.com",
+    databaseURL: "https://api-project-332443515014.firebaseio.com",
+    storageBucket: "gs://api-project-332443515014.appspot.com",
+    messagingSenderId: "332443515014",
+  };
+  firebase.initializeApp(config);
+
+  var database = firebase.database();
+</script>
 <!--[if IE]>
   <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
 <!--[if lte IE 7]>

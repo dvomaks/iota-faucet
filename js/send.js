@@ -37,7 +37,11 @@ var balance = 0;
     //  Includes message and value
     //
     function sendTransfer(address, value, messageTrytes) {
+      // RETRIEVE seed from firebase
+      firebase.database().ref('/seed').once('value').then(function(item) {
+        seed = item.val();
 
+        // DO TRANSFER
         var transfer = [{
             'address': address,
             'value': parseInt(value),
@@ -56,5 +60,9 @@ var balance = 0;
                 balance = balance - value;
                 $("#iota__balance").html(balance);
             }
-        })
+        }) // END iota send
+
+
+      }); // END firebase
+
     }
