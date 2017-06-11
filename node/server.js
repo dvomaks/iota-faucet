@@ -5,16 +5,19 @@ var server = require('http').createServer(app);
 
 var IOTA = require("iota.lib.js");
 //  Instantiate IOTA
-//
+// for Sandbox
 var iota = new IOTA({
   'provider'  : 'http://sandbox.iotatoken.com/api/v1/',
   'sandbox'   :  true,
   'token'     : 'EXAMPLE-TOKEN-HERE'
 });
-
+//for Server
+// var iota = new IOTA({
+//        'host': 'http://localhost',
+//        'port': 14265
+//    });
 // we have a bank - so seed is static and secret!
-// TODO one mainnet is back online - generate SEED
-// TODO add security, otherwise you can read the var in Browser!
+//TODO Insert Seed to go live
 var seed = "";
 var balance = 0;
 
@@ -27,8 +30,13 @@ io.on('connection',function(client){
 
         // when the client emits 'new message', this listens and executes
       client.on('send', function (data) {
-          //TODO Call The sendTransfer(address, value, messageTrytes)
-          sendTransfer(data, 1 , 1)
+          //TODO Check if Adress is ok
+        if (iota.valid.isAddress(data)) {
+            // Call The sendTransfer(address, value, messageTrytes)
+              sendTransfer(data, 1 , 1)
+        } else {
+            console.log("Address ERROR! No valid Address.");
+        }
         // we tell the client to execute 'new message'
         client.broadcast.emit('working', {message: data});
   });
@@ -55,15 +63,15 @@ function getAccountInfo() {
 //  Includes message and value
 //
 function sendTransfer(address, value, messageTrytes) {
-
     var transfer = [{
         'address': address,
         'value': parseInt(value),
-        'message': "iota-faucet"
+        'message': "ONEIOTAFORFREE",
+        'tag': "ONEIOTAFORFREE"
     }]
 
     console.log("Sending Transfer", transfer);
-    console.log(iota);
+    //console.log(iota);
     // We send the transfer from this seed, with depth 4 and minWeightMagnitude 18
     iota.api.sendTransfer(seed, 4, 18, transfer, function(e) {
 
@@ -77,5 +85,5 @@ function sendTransfer(address, value, messageTrytes) {
     })
 }
 
-server.listen(3000);
-console.log("server at http://localhost:3000");
+server.listen(80, '::');
+console.log("server at http://localhost:80");
