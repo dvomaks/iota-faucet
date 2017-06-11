@@ -5,12 +5,15 @@ var server = require('http').createServer(app);
 
 var IOTA = require("iota.lib.js");
 //  Instantiate IOTA
-// for Sandbox
 var iota = new IOTA({
-  'provider'  : 'http://sandbox.iotatoken.com/api/v1/',
-  'sandbox'   :  true,
-  'token'     : 'EXAMPLE-TOKEN-HERE'
+    'host': 'http://165.227.128.198',
+    'port': 14265
 });
+// var iota = new IOTA({
+//   'host'  : 'http://165.227.128.198',
+//   'sandbox'   :  true,
+//   'token'     : 'EXAMPLE-TOKEN-HERE'
+// });
 //for Server
 // var iota = new IOTA({
 //        'host': 'http://localhost',
@@ -85,5 +88,5 @@ function sendTransfer(address, value, messageTrytes) {
     })
 }
 
-server.listen(80, '::');
-console.log("server at http://localhost:80");
+server.listen(3000, '::');
+console.log("server at http://localhost:3000");
