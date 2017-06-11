@@ -36,7 +36,10 @@ io.on('connection',function(client){
           //TODO Check if Adress is ok
         if (iota.valid.isAddress(data)) {
             // Call The sendTransfer(address, value, messageTrytes)
-              sendTransfer(data, 1 , 1)
+              sendTransfer(data, 1 , 1);
+              // We fetch the latest transactions every 90 seconds
+              getAccountInfo();
+              setInterval(getAccountInfo, 90000);
         } else {
             console.log("Address ERROR! No valid Address.");
         }
