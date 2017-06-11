@@ -38,8 +38,8 @@ io.on('connection',function(client){
             // Call The sendTransfer(address, value, messageTrytes)
               sendTransfer(data, 1 , 1);
               // We fetch the latest transactions every 90 seconds
-              getAccountInfo();
-              setInterval(getAccountInfo, 90000);
+              //getAccountInfo();
+              //setInterval(getAccountInfo, 90000);
         } else {
             console.log("Address ERROR! No valid Address.");
         }
@@ -79,7 +79,7 @@ function sendTransfer(address, value, messageTrytes) {
     console.log("Sending Transfer", transfer);
     //console.log(iota);
     // We send the transfer from this seed, with depth 4 and minWeightMagnitude 18
-    iota.api.sendTransfer(seed, 4, 18, transfer, function(e) {
+    iota.api.sendTransfer(seed, 4, 15, transfer, function(e) {
 
         if (e){
           console.log(e)
