@@ -91,5 +91,5 @@ function sendTransfer(address, value, messageTrytes) {
     })
 }
 
-server.listen(3000, '::');
-console.log("server at http://localhost:3000");
+server.listen(80, '::');
+console.log("server at http://localhost:80");
