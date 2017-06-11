@@ -10,7 +10,7 @@ $(document).ready(function() {
         console.log(getDataFromForm());
         //TODO Clean Input Data of unwanted Stuff?
         // Socket events
-        socket.emit('send', getDataFromForm);
+        socket.emit('send', getDataFromForm());
         //Add Response for Iota is Sending
 
 
